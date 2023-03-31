@@ -39,6 +39,7 @@
         <TextBlock Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center"  Text="?" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="36" MouseDown="TextBlock_MouseDown"/>
         <TextBlock Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center"  Text="?" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="36" MouseDown="TextBlock_MouseDown"/>
         <TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center"  Text="?" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="36" MouseDown="TextBlock_MouseDown"/>
+        <TextBlock x:Name="timeTextBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Grid.Row="4" FontSize="36" Grid.ColumnSpan="4" MouseDown="TimeTextBlock_MouseDown"/>
 
 
 
