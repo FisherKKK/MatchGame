@@ -20,6 +20,8 @@ namespace MatchGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        private TextBlock lastTextBlockClicked;
+        private bool findingMatch = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -48,6 +50,29 @@ namespace MatchGame
                 string nextEmoij = animalEmoji[index];
                 textBlock.Text = nextEmoij;
                 animalEmoji.RemoveAt(index);
+            }
+        }
+
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock textblock = sender as TextBlock;
+            if (findingMatch == false)
+            {
+                textblock.Visibility = Visibility.Hidden;
+                lastTextBlockClicked = textblock;
+                findingMatch = true;
+            }
+            else if (textblock.Text == lastTextBlockClicked.Text)
+            {
+                textblock.Visibility = Visibility.Hidden;
+                // lastTextBlockClicked = null;
+                findingMatch = false;
+            }
+            else
+            {
+                lastTextBlockClicked.Visibility = Visibility.Visible;
+                findingMatch = false;
             }
         }
     }
